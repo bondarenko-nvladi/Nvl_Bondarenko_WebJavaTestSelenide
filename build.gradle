@@ -8,11 +8,11 @@ repositories {
 
 dependencies {
     // JUnit 5
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    implementation 'org.junit.jupiter:junit-jupiter:5.10.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
 
     //AssurtJ for better assertion
-    testImplementation 'org.assertj:assertj-core:3.24.2'
+    implementation 'org.assertj:assertj-core:3.24.2'
 
     //Allure
     implementation group: 'io.qameta.allure', name: 'allure-junit5', version: '2.29.0'
