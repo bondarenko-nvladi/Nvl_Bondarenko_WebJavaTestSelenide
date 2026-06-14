@@ -14,12 +14,12 @@ public class BaseTest {
     //Базовый урл для веб тестов
     protected static String baseUrl;
 
-  @BeforeEach
-   public void setUp() {
-      baseUrl = determineBaseUrl();
-      Configuration.browser = "chrome";
-      Configuration.browserSize = "1920x1080";
-  }
+    @BeforeEach
+    public void setUp() {
+        baseUrl = determineBaseUrl();
+        Configuration.browser = "chrome";
+        Configuration.browserSize = "1920x1080";
+    }
 
     private static String determineBaseUrl() {
         String environment = System.getProperty("env", "test");
@@ -45,15 +45,7 @@ public class BaseTest {
 
     @AfterEach
     public void tearDown() {
-      //закрываем веб драйвер после каждого теста
+        //закрываем веб драйвер после каждого теста
         closeWebDriver();
     }
 }
-
-
-
-
-
-
-
-
