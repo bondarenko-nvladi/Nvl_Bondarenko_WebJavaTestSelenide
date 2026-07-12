@@ -1,6 +1,6 @@
 package tests;
 
-import pages.LoginPage;
+import core.pages.LoginPage;
 import core.base.BaseTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
