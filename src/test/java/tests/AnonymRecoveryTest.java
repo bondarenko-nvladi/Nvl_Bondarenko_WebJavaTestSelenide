@@ -51,11 +51,11 @@ public class AnonymRecoveryTest extends BaseTest {
         anonymRecoveryPage.goToRecoveryByPhone();
         RecoveryByPhone recoveryByPhone = new RecoveryByPhone();
         // Выбираем страну из списка, в скобках прописываем название страны которую ищем: country-peru, country-russia
-        recoveryByPhone.selectCountryByName("country-peru");
+        String countryCode = recoveryByPhone.selectCountryByName("country-peru");
         // Нажимаем на кнопу 'Получить код'
         anonymRecoveryPage.clickButtonGetCode();
         // Названит строки которую мы хотим найти
-        String expectedErrorMessage = "Не верный номер телефона";
+        String expectedErrorMessage = "Введите номер телефона.";
         // Название элемента котороый мы получаем из кода страницы
         String actualErrorMessage = anonymRecoveryPage.getMessageTextIncorrectPhoneNumber();
         // Сверяем найденый текст в тем что мы указали на 58 строке
