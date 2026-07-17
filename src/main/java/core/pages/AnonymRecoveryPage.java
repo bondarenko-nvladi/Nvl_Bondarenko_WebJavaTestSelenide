@@ -11,7 +11,8 @@ public class AnonymRecoveryPage extends BasePage {
     private SelenideElement recoveryByPhoneButton = $("[name='recovery-phone-btn']");
     private SelenideElement recoveryByEmailButton = $("[name='recovery-email-btn']");
     private SelenideElement goToSupportButton = $("[name='support-contact-btn']");
-
+    private SelenideElement getCode = $("[name='phone-submit-btn']");
+    private SelenideElement errortext = $("[name='phone-error']");
 
     {
         verifyPageElements();
@@ -34,9 +35,19 @@ public class AnonymRecoveryPage extends BasePage {
         recoveryByEmailButton.shouldBe(visible).click();
     }
 
+    @Step("Получаем текст сообщения 'Введите номер телефона'")
+    public String getMessageTextIncorrectPhoneNumber() {
+        return errortext.shouldBe(visible).getText();
+    }
+
     @Step("Переходим к технической поддержке")
     public void goToSupport() {
         goToSupportButton.shouldBe(visible).click();
+    }
+
+    @Step("Нажимаем на кнопку 'Получить код'")
+    public void clickButtonGetCode() {
+        getCode.shouldBe(visible).click();
     }
 }
 
